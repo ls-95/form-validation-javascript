@@ -66,3 +66,19 @@ function validateMessage() {
     return true;
   }
 }
+
+function validateForm() {
+  if (
+    !validateName() ||
+    !validatePhone() ||
+    !validateEmail() ||
+    !validateMessage()
+  ) {
+    submitError.style.display = "block";
+    submitError.innerHTML = "Please complete all required fields";
+    setTimeout(function () {
+      submitError.style.display = "none";
+    }, 3000);
+    return false;
+  }
+}
