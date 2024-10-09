@@ -37,3 +37,18 @@ function validatePhone() {
     return true;
   }
 }
+
+function validateEmail() {
+  let email = document.getElementById("contact-email").value;
+
+  if (email.length == 0) {
+    emailError.innerHTML = "Email is required";
+    return false;
+  } else if (!email.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)) {
+    emailError.innerHTML = "Enter a valid email address";
+    return false;
+  } else {
+    emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+    return true;
+  }
+}
